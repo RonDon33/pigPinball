@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://cop2yvo1mvgnm"]
+
+[ext_resource type="Texture2D" uid="uid://by88nufpg1apc" path="res://sprites/pig ball sprites/pig_ball_ghost.png" id="1_7vfep"]
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_wxcdf"]
+
+[resource]
+script = ExtResource("1_wxcdf")
+pigName = "Ghost Pig"
+pigID = 17
+pigSprite = ExtResource("1_7vfep")
+pigDescription = "This pig 'mysteriously' shows up around large laboratories. It is aggressive towards humans in lab coats exclusively."

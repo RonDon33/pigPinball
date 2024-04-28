@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://csccnr2amh6t4"]
+
+[ext_resource type="Script" path="res://scripts/gamePartsScripts/paddles.gd" id="1_kjxcr"]
+[ext_resource type="Texture2D" uid="uid://dvwecpv4hjw2" path="res://sprites/gamePartSprites/pinball_paddle.png" id="2_tdj2c"]
+[ext_resource type="Texture2D" uid="uid://cowwsgar2v8vj" path="res://icon.svg" id="2_x6g1o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gb6pb"]
+radius = 22.0
+height = 151.897
+
+[node name="paddles" type="Node2D"]
+scale = Vector2(1.15, 1.15)
+script = ExtResource("1_kjxcr")
+rotationSpeed = 800.0
+
+[node name="LeftPaddle" type="CharacterBody2D" parent="."]
+
+[node name="LeftCollider" type="CollisionShape2D" parent="LeftPaddle"]
+position = Vector2(57.623, 19)
+rotation = 1.91986
+scale = Vector2(0.8, 1.2)
+shape = SubResource("CapsuleShape2D_gb6pb")
+
+[node name="Paddle" type="Sprite2D" parent="LeftPaddle"]
+position = Vector2(52.9684, 10.5636)
+rotation = -2.89118
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_tdj2c")
+
+[node name="Pivot" type="Sprite2D" parent="LeftPaddle"]
+rotation = 0.349066
+scale = Vector2(0.0827204, 0.0905367)
+texture = ExtResource("2_x6g1o")
+
+[node name="RightPaddle" type="CharacterBody2D" parent="."]
+position = Vector2(330, 0)
+
+[node name="RightCollider" type="CollisionShape2D" parent="RightPaddle"]
+position = Vector2(-57, 19)
+rotation = -1.91986
+scale = Vector2(0.8, 1.2)
+shape = SubResource("CapsuleShape2D_gb6pb")
+
+[node name="Paddle" type="Sprite2D" parent="RightPaddle"]
+position = Vector2(-53.0001, 15)
+rotation = -0.250614
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_tdj2c")
+
+[node name="Pivot" type="Sprite2D" parent="RightPaddle"]
+position = Vector2(0, -0.179)
+rotation = 2.79253
+scale = Vector2(0.0827204, 0.0905367)
+texture = ExtResource("2_x6g1o")

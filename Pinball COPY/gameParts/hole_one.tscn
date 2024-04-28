@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpbvd4ly8ou7x"]
+
+[ext_resource type="Script" path="res://scripts/gamePartsScripts/Hole_one.gd" id="1_g7qbk"]
+[ext_resource type="Texture2D" uid="uid://dkwywmwcs04ds" path="res://sprites/gamePartSprites/pinball_hole.png" id="2_2r4tf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_in6x3"]
+radius = 8.25
+
+[node name="Hole_one" type="Area2D"]
+script = ExtResource("1_g7qbk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("2_2r4tf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_in6x3")
+debug_color = Color(0.109804, 0.219608, 0.286275, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

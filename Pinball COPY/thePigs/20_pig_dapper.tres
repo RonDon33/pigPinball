@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://bcdcvkni6ty8j"]
+
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_gvpw8"]
+[ext_resource type="Texture2D" uid="uid://ct7nnsktfkpxs" path="res://sprites/pig ball sprites/pig_ball_dapper.png" id="1_iasxp"]
+
+[resource]
+script = ExtResource("1_gvpw8")
+pigName = "Dapper Pig"
+pigID = 20
+pigSprite = ExtResource("1_iasxp")
+pigDescription = "This pig is unhappy with anything below its high standards. It is dressed pretty nice, though."

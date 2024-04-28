@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://t6vhb4wjf0ss"]
+
+[ext_resource type="Texture2D" uid="uid://cgrwtwuerdftx" path="res://sprites/pig ball sprites/pig_ball_melon.png" id="1_4eftn"]
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_dsal6"]
+
+[resource]
+script = ExtResource("1_dsal6")
+pigName = "Melon Pig"
+pigID = 15
+pigSprite = ExtResource("1_4eftn")
+pigDescription = "Although it has never been recorded in the wild, these pigs grow straight from the ground. This process has been recreated by scientists."

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://cplaocxltv0ce"]
+
+[ext_resource type="Texture2D" uid="uid://bk7tu54f3p64m" path="res://sprites/pig ball sprites/pig_ball_galaxy_2.png" id="1_6u606"]
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="2_705kd"]
+
+[resource]
+script = ExtResource("2_705kd")
+pigName = "Galaxy Pig"
+pigID = 24
+pigSprite = ExtResource("1_6u606")
+pigDescription = "This pig is believed to have fallen from space. The patterns on its body mirror the stars in the sky."

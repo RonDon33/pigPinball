@@ -1,0 +1,204 @@
+[gd_scene load_steps=16 format=3 uid="uid://b45lv15siksni"]
+
+[ext_resource type="Script" path="res://scripts/pinballBoardOne.gd" id="1_4bc2e"]
+[ext_resource type="Texture2D" uid="uid://b5nb156jqymce" path="res://sprites/gamePartSprites/pinball_bonusBoard.png" id="1_04ft7"]
+[ext_resource type="Texture2D" uid="uid://cysmg6l8do31l" path="res://sprites/gamePartSprites/border_tan.png" id="2_4frq4"]
+[ext_resource type="Texture2D" uid="uid://bvjpkb43c76x0" path="res://sprites/gamePartSprites/background.png" id="2_x8rxr"]
+[ext_resource type="PackedScene" uid="uid://csccnr2amh6t4" path="res://gameParts/paddles.tscn" id="3_3xhh1"]
+[ext_resource type="PackedScene" uid="uid://cndamoilsthe" path="res://gameParts/ball.tscn" id="4_r2b6v"]
+[ext_resource type="PackedScene" uid="uid://cdrqd1ibs5ifj" path="res://gameParts/bumper_triangle.tscn" id="5_16477"]
+[ext_resource type="PackedScene" uid="uid://bn4nh0emtka4k" path="res://gameParts/moving_bumper_circle_new.tscn" id="6_167s1"]
+[ext_resource type="PackedScene" uid="uid://lf6dpcv3deno" path="res://gameParts/death_plane.tscn" id="8_youx1"]
+[ext_resource type="PackedScene" uid="uid://mpgccep0cswv" path="res://gameParts/ball_spawner.tscn" id="9_3ht5o"]
+[ext_resource type="PackedScene" uid="uid://dpbvd4ly8ou7x" path="res://gameParts/hole_one.tscn" id="10_rflcc"]
+[ext_resource type="Script" path="res://scenes/gameUI.gd" id="11_ge0kh"]
+[ext_resource type="FontFile" uid="uid://dlae34idqis1m" path="res://fontdiner-swanky/FontdinerSwanky.ttf" id="12_etbd1"]
+[ext_resource type="Script" path="res://scenes/Score.gd" id="13_hsao4"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p2hk5"]
+friction = 0.1
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_4bc2e")
+newPig = true
+location = "field"
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(2792, 648)
+texture = ExtResource("2_x8rxr")
+
+[node name="boardSprite" type="Sprite2D" parent="."]
+position = Vector2(62, -36)
+texture = ExtResource("1_04ft7")
+
+[node name="borders" type="Node2D" parent="."]
+position = Vector2(62, -36)
+
+[node name="BorderTan" type="Sprite2D" parent="borders"]
+position = Vector2(-96, -149)
+scale = Vector2(1.37305, 1.72363)
+texture = ExtResource("2_4frq4")
+
+[node name="gameParts" type="Node2D" parent="."]
+
+[node name="paddles" parent="gameParts" instance=ExtResource("3_3xhh1")]
+position = Vector2(-192, 720)
+
+[node name="ball" parent="gameParts" instance=ExtResource("4_r2b6v")]
+position = Vector2(308, 376)
+
+[node name="bumper_triangle" parent="gameParts" instance=ExtResource("5_16477")]
+position = Vector2(-421, 523)
+rotation = -2.15723
+
+[node name="CollisionPolygon2D" parent="gameParts/bumper_triangle" index="0"]
+position = Vector2(53.7923, -8.68242)
+scale = Vector2(15, 15)
+polygon = PackedVector2Array(-6, 0, -3.50654, -2.49346, 0, -6, 6, 0)
+
+[node name="bumper_triangle2" parent="gameParts" instance=ExtResource("5_16477")]
+position = Vector2(-421, 523)
+rotation = 2.15723
+
+[node name="CollisionPolygon2D" parent="gameParts/bumper_triangle2" index="0"]
+position = Vector2(-522.817, -698.358)
+scale = Vector2(15, 15)
+polygon = PackedVector2Array(-6, 0, -3.50654, -2.49346, 0, -6, 6, 0)
+
+[node name="moving_bumper_circle" parent="gameParts" instance=ExtResource("6_167s1")]
+position = Vector2(-400, 18)
+targetPos = Vector2(800, 0)
+speed = 100.0
+
+[node name="moving_bumper_circle2" parent="gameParts" instance=ExtResource("6_167s1")]
+position = Vector2(400, 278)
+targetPos = Vector2(-800, 0)
+speed = 100.0
+
+[node name="deathPlane" parent="gameParts" instance=ExtResource("8_youx1")]
+position = Vector2(-17, 963)
+
+[node name="ballSpawner" parent="gameParts" instance=ExtResource("9_3ht5o")]
+position = Vector2(309, 378)
+
+[node name="Hole_one" parent="gameParts" instance=ExtResource("10_rflcc")]
+position = Vector2(-8, 121)
+destination = "res://scenes/pinballBoardOne.tscn"
+
+[node name="boardCollisions" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_p2hk5")
+
+[node name="leftCollision" type="CollisionPolygon2D" parent="boardCollisions"]
+polygon = PackedVector2Array(529, 530, 103, 739, 104, 991, -118, 994, -118, 736, -538, 532, -537, -11, -500, -55, -449, -97, -391, -135, -302, -181, -233, -209, -152, -233, -57, -254, -1, -258, 0, -317, -650, -318, -655, 1076, 562, 1072)
+
+[node name="rightCollision" type="CollisionPolygon2D" parent="boardCollisions"]
+polygon = PackedVector2Array(0, -317, -2, -258, 59, -251, 125, -238, 178, -223, 238, -202, 300, -176, 355, -147, 420, -108, 466, -73, 500, -40, 524, -11, 525, 531, 531, 529, 531, 552, 614, 550, 613, -306)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 219)
+zoom = Vector2(0.5, 0.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="gameUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_ge0kh")
+
+[node name="Score" type="Label" parent="CanvasLayer/gameUI"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 528.0
+offset_right = 264.0
+offset_bottom = 574.0
+theme_override_colors/font_color = Color(0.509804, 0, 1, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("12_etbd1")
+theme_override_font_sizes/font_size = 33
+text = "Score: 000000"
+script = ExtResource("13_hsao4")
+
+[node name="Pause" type="Button" parent="CanvasLayer/gameUI"]
+process_mode = 3
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 120.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("12_etbd1")
+text = "Pause"
+
+[node name="PauseMenu" type="Control" parent="CanvasLayer" groups=["pauseMenu"]]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 364.0
+offset_top = 108.0
+offset_right = 748.0
+offset_bottom = 428.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.309804, 0.184314, 0.541176, 0.384314)
+
+[node name="pauseText" type="Label" parent="CanvasLayer/PauseMenu"]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 176.0
+offset_right = 640.0
+offset_bottom = 217.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("12_etbd1")
+text = "PAUSED
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="resume" type="Button" parent="CanvasLayer/PauseMenu"]
+process_mode = 3
+layout_mode = 0
+offset_left = 512.0
+offset_top = 232.0
+offset_right = 640.0
+offset_bottom = 296.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("12_etbd1")
+text = "RESUME
+"
+
+[node name="quit" type="Button" parent="CanvasLayer/PauseMenu"]
+process_mode = 3
+layout_mode = 0
+offset_left = 512.0
+offset_top = 320.0
+offset_right = 640.0
+offset_bottom = 384.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("12_etbd1")
+text = "QUIT
+"
+
+[connection signal="pressed" from="CanvasLayer/gameUI/Pause" to="CanvasLayer/gameUI" method="_on_pause_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/resume" to="CanvasLayer/gameUI" method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/quit" to="CanvasLayer/gameUI" method="_on_quit_pressed"]
+
+[editable path="gameParts/bumper_triangle"]
+[editable path="gameParts/bumper_triangle2"]

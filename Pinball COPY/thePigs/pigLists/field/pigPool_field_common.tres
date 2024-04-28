@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="pigList" load_steps=13 format=3 uid="uid://bsjlj5qdcverq"]
+
+[ext_resource type="Resource" uid="uid://bodb1bijsoruy" path="res://thePigs/0_pig_pink.tres" id="1_gdw08"]
+[ext_resource type="Script" path="res://scripts/PigDatabase.gd" id="2_qvki4"]
+[ext_resource type="Resource" uid="uid://dsk8emjo5g5qk" path="res://thePigs/1_pig_yellow.tres" id="2_w574e"]
+[ext_resource type="Resource" uid="uid://dvt3ue0jq1i4g" path="res://thePigs/2_pig_blue.tres" id="3_103ah"]
+[ext_resource type="Resource" uid="uid://dl7bx7lxi7a51" path="res://thePigs/3_pig_muddy.tres" id="4_a2w3u"]
+[ext_resource type="Resource" uid="uid://cxwkg55j81me0" path="res://thePigs/4_pig_cow.tres" id="5_sxk0y"]
+[ext_resource type="Resource" uid="uid://dtas8hegtf22e" path="res://thePigs/5_pig_bee.tres" id="6_5uud5"]
+[ext_resource type="Resource" uid="uid://2xvvnlu5xqhm" path="res://thePigs/6_pig_corn.tres" id="7_o7ina"]
+[ext_resource type="Resource" uid="uid://cikd4ugwx2umt" path="res://thePigs/7_pig_mushroom.tres" id="8_fcoc0"]
+[ext_resource type="Resource" uid="uid://cna5dj1w5km1x" path="res://thePigs/8_pig_fish.tres" id="9_v3kx5"]
+[ext_resource type="Resource" uid="uid://da15ujha1kbw5" path="res://thePigs/9_pig_viking.tres" id="10_4atv8"]
+[ext_resource type="Resource" uid="uid://bj6n1gvueui0v" path="res://thePigs/10_pig_overcast.tres" id="11_gys0t"]
+
+[resource]
+script = ExtResource("2_qvki4")
+pigs = Array[Resource("res://scripts/pigData.gd")]([ExtResource("1_gdw08"), ExtResource("2_w574e"), ExtResource("3_103ah"), ExtResource("4_a2w3u"), ExtResource("5_sxk0y"), ExtResource("6_5uud5"), ExtResource("7_o7ina"), ExtResource("8_fcoc0"), ExtResource("9_v3kx5"), ExtResource("10_4atv8"), ExtResource("11_gys0t")])

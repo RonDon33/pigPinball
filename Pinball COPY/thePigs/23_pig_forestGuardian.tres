@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://beasngssmcgri"]
+
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_3lb8u"]
+[ext_resource type="Texture2D" uid="uid://kd1q75ko3lev" path="res://sprites/pig ball sprites/pig_ball_tree.png" id="1_dbvge"]
+
+[resource]
+script = ExtResource("1_3lb8u")
+pigName = "Forest Guardian Pig"
+pigID = 23
+pigSprite = ExtResource("1_dbvge")
+pigDescription = "This pig only reveals itself when it finds someone pure of heart, or when it senses impending danger for itself or other pigs."

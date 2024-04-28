@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://dlu4u1ab0iej5"]
+
+[ext_resource type="Texture2D" uid="uid://bgvsehioblakw" path="res://sprites/pig ball sprites/pig_ball_zen.png" id="1_oqih6"]
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_pxjoe"]
+
+[resource]
+script = ExtResource("1_pxjoe")
+pigName = "Zen Pig"
+pigID = 22
+pigSprite = ExtResource("1_oqih6")
+pigDescription = "This pig seems to be made out of stone, but it is clearly emitting a powerful aura. Tests on this aura scatter even the most modern sensors."

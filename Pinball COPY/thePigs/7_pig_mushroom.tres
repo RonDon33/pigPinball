@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://cikd4ugwx2umt"]
+
+[ext_resource type="Texture2D" uid="uid://cw4psbv87vxqk" path="res://sprites/pig ball sprites/pig_ball_mushroom.png" id="1_dk2id"]
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_xy4ei"]
+
+[resource]
+script = ExtResource("1_xy4ei")
+pigName = "Mushy Pig"
+pigID = 7
+pigSprite = ExtResource("1_dk2id")
+pigDescription = "What a fun looking guy. These pigs live in little mushroom pig pens."

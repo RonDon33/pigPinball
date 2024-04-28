@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://dkss3rv51cf0y"]
+
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_d6rgy"]
+[ext_resource type="Texture2D" uid="uid://dtjwdcr36jh37" path="res://sprites/pig ball sprites/pig_ball_golden.png" id="1_xi68v"]
+
+[resource]
+script = ExtResource("1_d6rgy")
+pigName = "Golden Pig"
+pigID = 21
+pigSprite = ExtResource("1_xi68v")
+pigDescription = "This pig is made of solid gold. It is highly sought after, but illegal to sell in most markets."

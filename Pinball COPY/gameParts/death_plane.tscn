@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://lf6dpcv3deno"]
+
+[ext_resource type="Script" path="res://scripts/gamePartsScripts/deathPlane.gd" id="1_bxp46"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gldl0"]
+size = Vector2(216, 104)
+
+[node name="deathPlane" type="Area2D"]
+position = Vector2(560, 1112)
+script = ExtResource("1_bxp46")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 20)
+shape = SubResource("RectangleShape2D_gldl0")
+debug_color = Color(0.827451, 0, 0.94902, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

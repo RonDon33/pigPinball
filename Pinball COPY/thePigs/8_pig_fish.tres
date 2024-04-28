@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://cna5dj1w5km1x"]
+
+[ext_resource type="Texture2D" uid="uid://k2lujuf8gfyh" path="res://sprites/pig ball sprites/pig_ball_fish.png" id="1_222oi"]
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_xssk1"]
+
+[resource]
+script = ExtResource("1_xssk1")
+pigName = "Fish Pig"
+pigID = 8
+pigSprite = ExtResource("1_222oi")
+pigDescription = "This pig was commonly used to transport items and people across the water."

@@ -1,0 +1,133 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0khyt77ig3ge"]
+
+[ext_resource type="Script" path="res://scenes/pig_select.gd" id="1_sgokm"]
+[ext_resource type="Texture2D" uid="uid://2ndb8w8lt4ot" path="res://fontdiner-swanky/notebook2.png" id="2_3ld7l"]
+[ext_resource type="Shader" path="res://scenes/scroll.gdshader" id="2_sc4ue"]
+[ext_resource type="Texture2D" uid="uid://bvjpkb43c76x0" path="res://sprites/gamePartSprites/background.png" id="3_y3epq"]
+[ext_resource type="FontFile" uid="uid://dlae34idqis1m" path="res://fontdiner-swanky/FontdinerSwanky.ttf" id="4_re0ta"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fb454"]
+shader = ExtResource("2_sc4ue")
+
+[node name="pigSelect" type="Control" groups=["pigSelect"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sgokm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_fb454")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_y3epq")
+expand_mode = 5
+flip_h = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(624, 328)
+texture = ExtResource("2_3ld7l")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Sprite2D"]
+layout_direction = 3
+offset_left = 78.0
+offset_top = -136.0
+offset_right = 278.0
+offset_bottom = 184.0
+follow_focus = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sprite2D/ScrollContainer"]
+clip_contents = true
+layout_direction = 2
+layout_mode = 2
+alignment = 1
+
+[node name="name" type="Label" parent="Sprite2D" groups=["pigName"]]
+offset_left = -88.0
+offset_top = -184.0
+offset_right = 224.0
+offset_bottom = -144.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_re0ta")
+theme_override_font_sizes/font_size = 26
+text = "Name"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="description" type="Label" parent="Sprite2D" groups=["pigDescription"]]
+offset_left = -72.0
+offset_top = -136.0
+offset_right = 224.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_re0ta")
+text = "Description:"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="SELL" type="Button" parent="Sprite2D"]
+process_mode = 3
+offset_left = -40.0
+offset_top = 96.0
+offset_right = 56.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_re0ta")
+text = "Sell"
+
+[node name="USE" type="Button" parent="Sprite2D"]
+process_mode = 3
+offset_left = 72.0
+offset_top = 96.0
+offset_right = 208.0
+offset_bottom = 152.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_re0ta")
+text = "Use this pig"
+clip_text = true
+
+[node name="PIG IN USE" type="Label" parent="Sprite2D" groups=["pigInUse"]]
+process_mode = 3
+visible = false
+offset_left = 64.0
+offset_top = 160.0
+offset_right = 211.0
+offset_bottom = 185.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_re0ta")
+text = "Pig is now in use!"
+
+[node name="back" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 64.0
+offset_top = 56.0
+offset_right = 152.0
+offset_bottom = 104.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_re0ta")
+text = "BACK
+"
+
+[connection signal="pressed" from="Sprite2D/SELL" to="." method="_on_sell_pressed"]
+[connection signal="pressed" from="Sprite2D/USE" to="." method="_on_use_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_button_pressed"]

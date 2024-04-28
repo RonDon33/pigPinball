@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://cblcnpser3ch4"]
+
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_7mnk6"]
+[ext_resource type="Texture2D" uid="uid://cwok6kkvjllr5" path="res://sprites/pig ball sprites/pig_ball_sleek.png" id="1_ses62"]
+
+[resource]
+script = ExtResource("1_7mnk6")
+pigName = "Sleek Pig"
+pigID = 18
+pigSprite = ExtResource("1_ses62")
+pigDescription = "This mechanical pig was presumably built to track down and incapacitate robo pigs. Its technology is far more advanced than that of robo pigs."

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bn4nh0emtka4k"]
+
+[ext_resource type="Script" path="res://scripts/gamePartsScripts/moving_bumper_circle_new.gd" id="1_avrm6"]
+[ext_resource type="Texture2D" uid="uid://dkkl4lr7khpb2" path="res://sprites/gamePartSprites/pinball_bumper_circle.png" id="2_mj044"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eil4r"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k4n01"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_40xqg"]
+radius = 33.0606
+
+[node name="moving_bumper_circle" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_eil4r")
+script = ExtResource("1_avrm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_mj044")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_k4n01")
+
+[node name="points" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="points"]
+shape = SubResource("CircleShape2D_40xqg")
+
+[connection signal="body_entered" from="points" to="." method="_on_points_body_entered"]

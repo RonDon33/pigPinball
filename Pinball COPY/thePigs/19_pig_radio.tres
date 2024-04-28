@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://bg6tdnjqrtmcs"]
+
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_dyyvj"]
+[ext_resource type="Texture2D" uid="uid://4tikr38j4syx" path="res://sprites/pig ball sprites/pig_ball_radio.png" id="1_senlt"]
+
+[resource]
+script = ExtResource("1_dyyvj")
+pigName = "Radio Pig"
+pigID = 19
+pigSprite = ExtResource("1_senlt")
+pigDescription = "These pigs can be humanely used as a strong power source. Don't expose yourself to them for too long, though."

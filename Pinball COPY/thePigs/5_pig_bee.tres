@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://dtas8hegtf22e"]
+
+[ext_resource type="Texture2D" uid="uid://db1ty3ubmay2x" path="res://sprites/pig ball sprites/pig_ball_bee.png" id="1_f487a"]
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_kt56v"]
+
+[resource]
+script = ExtResource("1_kt56v")
+pigName = "Bee Pig"
+pigID = 5
+pigSprite = ExtResource("1_f487a")
+pigDescription = "Luckily it doesn't have a stinger. A bee the size of a pig would be pretty scary."

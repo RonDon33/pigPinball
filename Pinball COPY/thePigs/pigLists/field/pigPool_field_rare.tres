@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="pigList" load_steps=8 format=3 uid="uid://cu0y28xrcagpn"]
+
+[ext_resource type="Script" path="res://scripts/PigDatabase.gd" id="1_j8kec"]
+[ext_resource type="Resource" uid="uid://c0x000bifodkk" path="res://thePigs/11_pig_thunderous.tres" id="1_lfwl8"]
+[ext_resource type="Resource" uid="uid://bcwjqhpx56s85" path="res://thePigs/12_pig_slimey.tres" id="2_i0i4i"]
+[ext_resource type="Resource" uid="uid://cd33rdk8rb0w5" path="res://thePigs/13_pig_robot.tres" id="3_31npg"]
+[ext_resource type="Resource" uid="uid://86nbo8fp4qxa" path="res://thePigs/14_pig_bomb.tres" id="4_ytrfv"]
+[ext_resource type="Resource" uid="uid://t6vhb4wjf0ss" path="res://thePigs/15_pig_melon.tres" id="5_pmj62"]
+[ext_resource type="Resource" uid="uid://se6iljsv6q4x" path="res://thePigs/16_pig_cool.tres" id="6_5frvq"]
+
+[resource]
+script = ExtResource("1_j8kec")
+pigs = Array[Resource("res://scripts/pigData.gd")]([ExtResource("1_lfwl8"), ExtResource("2_i0i4i"), ExtResource("3_31npg"), ExtResource("4_ytrfv"), ExtResource("5_pmj62"), ExtResource("6_5frvq")])

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="pigList" load_steps=7 format=3 uid="uid://hv10d7tqbn52"]
+
+[ext_resource type="Script" path="res://scripts/PigDatabase.gd" id="1_6b25d"]
+[ext_resource type="Resource" uid="uid://cop2yvo1mvgnm" path="res://thePigs/17_ghost_pig.tres" id="1_s66ro"]
+[ext_resource type="Resource" uid="uid://cblcnpser3ch4" path="res://thePigs/18_pig_sleek.tres" id="2_t4hay"]
+[ext_resource type="Resource" uid="uid://bg6tdnjqrtmcs" path="res://thePigs/19_pig_radio.tres" id="3_xu1di"]
+[ext_resource type="Resource" uid="uid://bcdcvkni6ty8j" path="res://thePigs/20_pig_dapper.tres" id="4_sagot"]
+[ext_resource type="Resource" uid="uid://dkss3rv51cf0y" path="res://thePigs/21_pig_gold.tres" id="5_12end"]
+
+[resource]
+script = ExtResource("1_6b25d")
+pigs = Array[Resource("res://scripts/pigData.gd")]([ExtResource("1_s66ro"), ExtResource("2_t4hay"), ExtResource("3_xu1di"), ExtResource("4_sagot"), ExtResource("5_12end")])

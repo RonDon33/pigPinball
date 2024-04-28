@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdrqd1ibs5ifj"]
+
+[ext_resource type="Script" path="res://scripts/gamePartsScripts/bumper_triangle.gd" id="1_nu7ib"]
+[ext_resource type="Texture2D" uid="uid://lg5pqjfksasw" path="res://sprites/gamePartSprites/pinball_bumper_triangle.png" id="1_siw21"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vo48x"]
+friction = 0.0
+bounce = 0.7
+
+[node name="bumper_triangle" type="RigidBody2D" groups=["bumper"]]
+physics_material_override = SubResource("PhysicsMaterial_vo48x")
+freeze = true
+script = ExtResource("1_nu7ib")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(5, 5)
+polygon = PackedVector2Array(-6, 0, 0, -6, 6, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionPolygon2D"]
+position = Vector2(0.0222715, -0.555455)
+rotation = 2.35351
+scale = Vector2(0.0335427, 0.0329396)
+texture = ExtResource("1_siw21")

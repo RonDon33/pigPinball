@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://bj6n1gvueui0v"]
+
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_6xd7h"]
+[ext_resource type="Texture2D" uid="uid://bbhuug24urdiy" path="res://sprites/pig ball sprites/pig_ball_overcast.png" id="1_ghp5x"]
+
+[resource]
+script = ExtResource("1_6xd7h")
+pigName = "Overcast Pig"
+pigID = 10
+pigSprite = ExtResource("1_ghp5x")
+pigDescription = "This pig is extremely soft to the touch. Just keep it away from any blue pigs."

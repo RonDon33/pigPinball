@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://se6iljsv6q4x"]
+
+[ext_resource type="Texture2D" uid="uid://m5ciwqtnk1x5" path="res://sprites/pig ball sprites/pig_ball_cool.png" id="1_pkns1"]
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_uhn5b"]
+
+[resource]
+script = ExtResource("1_uhn5b")
+pigName = "Cool Pig"
+pigID = 16
+pigSprite = ExtResource("1_pkns1")
+pigDescription = "When this pig speaks, you listen. When it stands, you sit. You don't want to mess with this pig."

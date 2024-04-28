@@ -1,0 +1,124 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1f5jvs50ro2n"]
+
+[ext_resource type="PackedScene" uid="uid://csccnr2amh6t4" path="res://gameParts/paddles.tscn" id="1_j7yv4"]
+[ext_resource type="PackedScene" uid="uid://cndamoilsthe" path="res://gameParts/ball.tscn" id="2_usima"]
+[ext_resource type="PackedScene" uid="uid://cdrqd1ibs5ifj" path="res://gameParts/bumper_triangle.tscn" id="3_ivlov"]
+[ext_resource type="PackedScene" uid="uid://tcbgjjueqr0g" path="res://gameParts/ball_launcher.tscn" id="4_0im50"]
+[ext_resource type="PackedScene" uid="uid://buhcisje21m0d" path="res://gameParts/bumper_circle.tscn" id="5_crfg2"]
+[ext_resource type="PackedScene" uid="uid://dpbvd4ly8ou7x" path="res://gameParts/hole_one.tscn" id="6_5obvt"]
+[ext_resource type="PackedScene" uid="uid://ceryfojiqlqi7" path="res://gameParts/hole_two.tscn" id="7_pnrua"]
+[ext_resource type="PackedScene" uid="uid://cefxpt38vbwrr" path="res://gameParts/moving_bumper_circle.tscn" id="8_qv1hp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0w1ij"]
+size = Vector2(310.941, 20)
+
+[node name="main" type="Node2D"]
+
+[node name="paddles" parent="." instance=ExtResource("1_j7yv4")]
+position = Vector2(406, 573)
+
+[node name="Ball" parent="." instance=ExtResource("2_usima")]
+position = Vector2(955, 220)
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2(269, 518)
+rotation = 0.374088
+
+[node name="Wall" type="StaticBody2D" parent="Walls"]
+position = Vector2(0.600006, -6.6813)
+rotation = -0.374088
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall"]
+rotation = 0.374088
+shape = SubResource("RectangleShape2D_0w1ij")
+
+[node name="Wall2" type="StaticBody2D" parent="Walls"]
+position = Vector2(545.273, -211.911)
+rotation = 2.03916
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2"]
+rotation = 0.374088
+shape = SubResource("RectangleShape2D_0w1ij")
+
+[node name="Wall3" type="StaticBody2D" parent="Walls"]
+position = Vector2(628.101, -444.246)
+rotation = 4.14782
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3"]
+position = Vector2(6.02307, 2.3645)
+rotation = 0.374088
+shape = SubResource("RectangleShape2D_0w1ij")
+
+[node name="Wall4" type="StaticBody2D" parent="Walls"]
+position = Vector2(-218.496, -126.935)
+rotation = 3.80213
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall4"]
+position = Vector2(6.02307, 2.3645)
+rotation = 0.374088
+shape = SubResource("RectangleShape2D_0w1ij")
+
+[node name="Wall6" type="StaticBody2D" parent="Walls"]
+position = Vector2(-218.496, -126.935)
+rotation = 3.80213
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall6"]
+position = Vector2(194.274, 72.406)
+rotation = 0.374088
+shape = SubResource("RectangleShape2D_0w1ij")
+
+[node name="Wall5" type="StaticBody2D" parent="Walls"]
+position = Vector2(-131.55, -480.134)
+rotation = 5.54905
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall5"]
+position = Vector2(281.931, 108.272)
+rotation = 0.374088
+scale = Vector2(5, 0.5)
+shape = SubResource("RectangleShape2D_0w1ij")
+
+[node name="Wall7" type="StaticBody2D" parent="Walls"]
+position = Vector2(614.126, -523.629)
+rotation = -2.13536
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall7"]
+position = Vector2(204.709, 79.1901)
+rotation = 0.374088
+shape = SubResource("RectangleShape2D_0w1ij")
+
+[node name="bumper_triangle" parent="." instance=ExtResource("3_ivlov")]
+position = Vector2(987, 48)
+rotation = -3.2085
+scale = Vector2(1.65519, 1.65519)
+
+[node name="ball_launcher" parent="." instance=ExtResource("4_0im50")]
+
+[node name="bumper_circle" parent="." instance=ExtResource("5_crfg2")]
+position = Vector2(369, 228)
+
+[node name="bumper_circle2" parent="." instance=ExtResource("5_crfg2")]
+position = Vector2(726, 222)
+
+[node name="Hole_one" parent="." instance=ExtResource("6_5obvt")]
+position = Vector2(219, 321)
+
+[node name="hole_two" parent="." instance=ExtResource("7_pnrua")]
+position = Vector2(487, 103)
+
+[node name="hole_A" parent="hole_two" index="0"]
+position = Vector2(450, 0)
+
+[node name="CollisionShape2D" parent="hole_two/hole_A" index="0"]
+position = Vector2(-5.99998, -3.8147e-06)
+
+[node name="hole_B" parent="hole_two" index="1"]
+position = Vector2(-292, 30)
+
+[node name="CollisionShape2D" parent="hole_two/hole_B" index="0"]
+position = Vector2(-1.99997, 2)
+
+[node name="moving_bumper_circle" parent="." instance=ExtResource("8_qv1hp")]
+position = Vector2(569, 392)
+targetPos = Vector2(0, -100)
+
+[editable path="hole_two"]

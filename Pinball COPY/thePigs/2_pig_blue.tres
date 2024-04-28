@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://dvt3ue0jq1i4g"]
+
+[ext_resource type="Texture2D" uid="uid://csfdsy1ufxgda" path="res://sprites/pig ball sprites/pig_ball_blue.png" id="1_7evxt"]
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_a8qp6"]
+
+[resource]
+script = ExtResource("1_a8qp6")
+pigName = "Blue Pig"
+pigID = 2
+pigSprite = ExtResource("1_7evxt")
+pigDescription = "This pig is as blue as the sky. It is thought to have gained this coloring by preying on overcast pigs."

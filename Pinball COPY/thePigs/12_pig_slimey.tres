@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://bcwjqhpx56s85"]
+
+[ext_resource type="Texture2D" uid="uid://cerwm1bgo82bd" path="res://sprites/pig ball sprites/pig_ball_slimey.png" id="1_0pbq0"]
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_xsn0l"]
+
+[resource]
+script = ExtResource("1_xsn0l")
+pigName = "Slimey Pig"
+pigID = 12
+pigSprite = ExtResource("1_0pbq0")
+pigDescription = "This pig is pretty gross to look at. Is it covered in the mystery ooze or is it made of it? No one has been willing to find out."

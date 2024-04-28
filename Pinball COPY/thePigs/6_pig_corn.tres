@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://2xvvnlu5xqhm"]
+
+[ext_resource type="Texture2D" uid="uid://bosft8r0pmp4o" path="res://sprites/pig ball sprites/pig_ball_corn.png" id="1_d7hf6"]
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_mwytw"]
+
+[resource]
+script = ExtResource("1_mwytw")
+pigName = "Corn Pig"
+pigID = 6
+pigSprite = ExtResource("1_d7hf6")
+pigDescription = "Now THIS is a yummy looking pig. Wait... is the cob bones? :("

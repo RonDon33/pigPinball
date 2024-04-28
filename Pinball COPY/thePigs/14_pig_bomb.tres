@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://86nbo8fp4qxa"]
+
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_awep7"]
+[ext_resource type="Texture2D" uid="uid://wpicl8x6tpy1" path="res://sprites/pig ball sprites/pig_ball_bomb.png" id="1_b4625"]
+
+[resource]
+script = ExtResource("1_awep7")
+pigName = "Bomb Pig"
+pigID = 14
+pigSprite = ExtResource("1_b4625")
+pigDescription = "This pig used to be used for excavation and mining. Just be careful not to accidentally light its fuse."

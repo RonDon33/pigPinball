@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://tcbgjjueqr0g"]
+
+[ext_resource type="Script" path="res://scripts/gamePartsScripts/ball_launcher.gd" id="1_rkmrv"]
+[ext_resource type="Texture2D" uid="uid://bweer8j0if2kn" path="res://sprites/gamePartSprites/pinball_launcher1.png" id="2_5re8d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxd61"]
+size = Vector2(218, 47)
+
+[node name="ball_launcher" type="CharacterBody2D"]
+process_priority = 1
+process_physics_priority = 1
+position = Vector2(958, 383)
+script = ExtResource("1_rkmrv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5re8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -92.5)
+shape = SubResource("RectangleShape2D_fxd61")

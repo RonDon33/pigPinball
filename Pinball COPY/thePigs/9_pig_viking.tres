@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://da15ujha1kbw5"]
+
+[ext_resource type="Texture2D" uid="uid://y0yxcquw6i2j" path="res://sprites/pig ball sprites/pig_ball_viking.png" id="1_35f41"]
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_n026u"]
+
+[resource]
+script = ExtResource("1_n026u")
+pigName = "Viking Pig"
+pigID = 9
+pigSprite = ExtResource("1_35f41")
+pigDescription = "I'm pretty sure this pig just found a viking helmet somewhere. It's still pretty awesome though."

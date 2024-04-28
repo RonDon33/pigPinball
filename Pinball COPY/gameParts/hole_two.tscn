@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceryfojiqlqi7"]
+
+[ext_resource type="Script" path="res://hole_A.gd" id="1_raqm1"]
+[ext_resource type="Script" path="res://scripts/gamePartsScripts/hole_B.gd" id="2_jjt84"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qel1u"]
+radius = 12.1655
+
+[node name="hole_two" type="Node2D"]
+
+[node name="hole_A" type="Area2D" parent="."]
+position = Vector2(90, 0)
+script = ExtResource("1_raqm1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hole_A"]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_qel1u")
+debug_color = Color(0.792157, 0.427451, 0, 0.419608)
+
+[node name="hole_B" type="Area2D" parent="."]
+script = ExtResource("2_jjt84")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hole_B"]
+position = Vector2(7.62939e-06, 0)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_qel1u")
+debug_color = Color(0, 0.568627, 0.858824, 0.419608)
+
+[connection signal="body_entered" from="hole_A" to="hole_A" method="_on_body_entered"]
+[connection signal="body_entered" from="hole_B" to="hole_B" method="_on_body_entered"]

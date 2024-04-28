@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://c0x000bifodkk"]
+
+[ext_resource type="Texture2D" uid="uid://b6h4gocvw06lt" path="res://sprites/pig ball sprites/pig_ball_thunderous.png" id="1_q8vk5"]
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_tk5aa"]
+
+[resource]
+script = ExtResource("1_tk5aa")
+pigName = "Thunderous Pig"
+pigID = 11
+pigSprite = ExtResource("1_q8vk5")
+pigDescription = "This pig is very aggressive. It is the result of an angry overcast pig. It can easily protect itself from predators."

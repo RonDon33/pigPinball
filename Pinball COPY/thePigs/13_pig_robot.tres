@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://cd33rdk8rb0w5"]
+
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="1_u2ump"]
+[ext_resource type="Texture2D" uid="uid://b4xm2xf2dgh3c" path="res://sprites/pig ball sprites/pig_ball_robo.png" id="1_vumth"]
+
+[resource]
+script = ExtResource("1_u2ump")
+pigName = "Robo Pig"
+pigID = 13
+pigSprite = ExtResource("1_vumth")
+pigDescription = "This pig was created in a lab with ultramodern technology and was released to gather more information on pigkind. They are being encountered more and more often."

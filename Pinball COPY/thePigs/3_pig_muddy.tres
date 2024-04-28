@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="pigData" load_steps=3 format=3 uid="uid://dl7bx7lxi7a51"]
+
+[ext_resource type="Texture2D" uid="uid://cvmw268ghvusq" path="res://sprites/pig ball sprites/pig_ball_mud_2.png" id="1_7rx2t"]
+[ext_resource type="Script" path="res://scripts/pigData.gd" id="2_g8hdi"]
+
+[resource]
+script = ExtResource("2_g8hdi")
+pigName = "Muddy Pig"
+pigID = 3
+pigSprite = ExtResource("1_7rx2t")
+pigDescription = "This is just a pink pig who got dirty. I don't know why this is a separate entry."

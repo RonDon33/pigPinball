@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://buhcisje21m0d"]
+
+[ext_resource type="Script" path="res://scripts/gamePartsScripts/bumper_circle.gd" id="1_6oq6e"]
+[ext_resource type="Texture2D" uid="uid://cqiw72nfi2rjn" path="res://sprites/gamePartSprites/bumper_mushroom.png" id="2_lfb47"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g47vm"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_athmj"]
+
+[node name="bumper_circle" type="RigidBody2D" groups=["bumper"]]
+physics_material_override = SubResource("PhysicsMaterial_g47vm")
+freeze = true
+script = ExtResource("1_6oq6e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(0, -47)
+texture = ExtResource("2_lfb47")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_athmj")
+debug_color = Color(0.996078, 0, 0.160784, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
